@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { SignOutButton } from "@clerk/nextjs";
 
 
 
@@ -21,7 +21,15 @@ export default function Home() {
           <span className="text-blue-500">Dashboard</span>
         </Link>
       </div>
+      <div className="flex justify-end p-4">
+      <SignOutButton>
+        <button className="bg-red-500 text-white px-4 py-2 rounded-md">
+          Logout
+        </button>
+      </SignOutButton>
     </div>
+    </div>
+
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         
