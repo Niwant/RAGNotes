@@ -63,7 +63,6 @@ pip-wheel-metadata/
 *.joblib
 /data/
 *.csv
-*.json
 *.sqlite3
 
 # Docker
