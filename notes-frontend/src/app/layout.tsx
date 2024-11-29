@@ -5,6 +5,8 @@ import {
   ClerkProvider,
 } from '@clerk/nextjs'
 import './globals.css'
+import { SidebarProvider , SidebarTrigger } from "@/components/ui/sidebar";
+import {AppSidebar} from "@/components/ui/app-sidebar"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,13 +31,30 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
+      {/* <SidebarProvider> */}
     <html lang="en">
+      <head>
+      <link
+          href="//esm.sh/@wooorm/starry-night@3/style/both.css"
+          rel="stylesheet"
+        />
+        <link
+          href="//esm.sh/github-markdown-css@5/github-markdown.css"
+          rel="stylesheet"
+        />
+        <link
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+  
       </body>
     </html>
+    {/* </SidebarProvider> */}
     </ClerkProvider>
   );
 }
