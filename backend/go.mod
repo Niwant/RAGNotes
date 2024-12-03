@@ -3,6 +3,8 @@ module backend
 go 1.23.3
 
 require (
+	github.com/clerk/clerk-sdk-go/v2 v2.2.0 // indirect
+	github.com/go-jose/go-jose/v3 v3.0.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/gorilla/mux v1.8.1 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect

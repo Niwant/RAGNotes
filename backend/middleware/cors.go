@@ -8,10 +8,11 @@ import (
 
 func CorsMiddleware() func(http.Handler) http.Handler {
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"https://localhost:300"},
+		AllowedOrigins:   []string{"*"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
-		AllowedHeaders:   []string{"Conntent-Type", "Authorization"},
+		AllowedHeaders:   []string{"Conntent-Type", "Authorization", "content-type"},
 		AllowCredentials: true,
+		Debug:            true,
 	})
 
 	return c.Handler

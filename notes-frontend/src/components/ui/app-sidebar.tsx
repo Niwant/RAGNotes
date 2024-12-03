@@ -1,5 +1,3 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
-
 import {
   Sidebar,
   SidebarContent,
@@ -10,15 +8,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { useEffect , useState} from "react"
 
-// Menu items.
-const items = [
-  { id: 1, title: "Meeting Notes", content: "Discuss project timeline and deliverables." },
-  { id: 2, title: "Grocery List", content: "Milk, Bread, Eggs, Butter." },
-  { id: 3, title: "Project Ideas", content: "AI-driven chatbot for customer support." },
-]
 
-export function AppSidebar({notes , handleSelectNote}) {
+export function AppSidebar({ notes, handleSelectNote }: AppSidebarProps) {
   return (
     <Sidebar>
       <SidebarContent>
@@ -26,13 +19,17 @@ export function AppSidebar({notes , handleSelectNote}) {
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {notes.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild onClick={()=>handleSelectNote(item)}>
-                    <span>{item.title}</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {notes.length == 0 ? (
+                <div>No notes available</div>
+              ) : (
+                notes.map((item) => (
+                  <SidebarMenuItem key={item.ID || item._id}>
+                    <SidebarMenuButton asChild onClick={() => handleSelectNote(item)}>
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
