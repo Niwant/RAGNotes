@@ -175,6 +175,7 @@ createStarryNight(grammars).then(
 )
 
 function Playground() {
+  
   const [text, setText] = React.useState(sample)
   const [gfm, setGfm] = React.useState(false)
   const [raw, setRaw] = React.useState(false)
@@ -216,8 +217,8 @@ function Playground() {
                 setRaw(!raw)
               }}
             />{' '}
-            Use <code>rehype-raw</code>
-            <span className="show-big"> (to enable HTML)</span>
+             <code>rehype-raw</code>
+           <span className="show-big"> (to enable HTML)</span>
           </label>
         </div>
         <div className="editor-inner">
