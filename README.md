@@ -14,10 +14,9 @@ frontend/
 │   ├── App.js                # Main React component
 │   ├── index.js              # Entry point
 ├── package.json              # Frontend dependencies
-├── tailwind.config.js        # Tailwind CSS configuration
-└── webpack.config.js         # Webpack configuration
+├── tailwind.config.js        # webpack.config.js         # Webpack configuration
 ```
-
+ChatInterfac/
 ---
 
 ## **Backend (Node.js API)**

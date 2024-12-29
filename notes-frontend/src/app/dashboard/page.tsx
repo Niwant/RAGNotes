@@ -10,7 +10,7 @@ import { useState } from "react";
 import MarkdownEditor from "@/components/markdownEditor";
 import { Input } from "@/components/ui/input"
 import {NotebookPen } from "lucide-react"
- 
+import Chatbot from "@/components/chatbot"
 import { Button } from "@/components/ui/button" 
 
 import axios from "axios"
@@ -105,6 +105,8 @@ export default function DashboardPage() {
             <Button onClick={createNewNote}>
             <NotebookPen /> Create a Note 
             </Button>
+            <Chatbot/>
+        
             {/* Markdown Editor */}
             {selectedNote && <Input placeholder="Email" value={selectedNote.title} onChange={(e)=>handleTitleChange(e.target.value)} /> }
             {selectedNote && <MarkdownEditor note={selectedNote} handleContentChange={handleContentChange} />}
