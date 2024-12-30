@@ -12,7 +12,8 @@ func InitializeRoutes() *mux.Router {
 	router := mux.NewRouter()
 
 	notesRouter := router.PathPrefix("/api/notes").Subrouter()
-
+  chatRouter := router.PathPrefix("/api/chat").Subrouter()
+  chatRouter.HandleFunc("/", controllers.ChatResponse).Methods("GET")
 	// Handle OPTIONS preflight requests
 	notesRouter.HandleFunc("/api/notes/{id:[a-fA-F0-9]{24}}", controllers.GetNoteByID).Methods("OPTIONS")
 	notesRouter.HandleFunc("/api/notes", controllers.CreateNote).Methods("OPTIONS")
